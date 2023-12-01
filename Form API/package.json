@@ -1,0 +1,22 @@
+{
+  "name": "form-api",
+  "version": "1.0.0",
+  "description": "execicio api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon formApi.js",
+    "start": "node formApi.js"
+  },
+  "keywords": [],
+  "author": "Francine Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
