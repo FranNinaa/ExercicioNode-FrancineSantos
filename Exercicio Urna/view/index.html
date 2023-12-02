@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <script src="js/index.js" defer></script>
     <!---------------- Area de Cabeçalho ---------------------->
@@ -20,19 +21,16 @@
     <!---------------- Sessao Principal ---------------------->
     <main>
         <form id="urna-form">
-            <fieldset class="borda" method="">
+            <fieldset class="borda">
                 <legend class="borda">Urna Eletrônica</legend>
-                <!-------- Formulario imagem do candidato ------>
-                <!--------- o nome do candidato pensei em deixar esse mesmo só para exemplo (sem criatividade)------->
                 <section class="imgCandidatos">
-                    <img src="img/presidentDay.jpg" alt="Candidato" id="idFoto">
+                    <img src="img/presidentDay.jpg" alt="Imagem Candidato" id="idFoto">
                     <input id="idNomeCandidato" type="nomeCandidato" name="nmCandidato" value="Futuro Presidente" readonly><br><br>
                 </section>
                 <input id="idNumeroCandidato" type="number" autofocus placeholder="Número de seu candidato"><br><br>
                 <input id="idCPF" type="text" name="nmCPF" value="" placeholder="Digite seu CPF"><br><br>
-                <!------------ botões ------>
                 <section class="botoesUrnaEletronica">
-                    <input class="confirmar" type="button" value="Confirmar">
+                    <input class="confirmar" type="button" value="Confirmar" onclick="enviarVoto()">
                     <input class="cancelar" type="reset" value="Cancelar">
                     <input class="branco" type="button" value="Branco">
                 </section>
@@ -40,6 +38,7 @@
             </fieldset>
             <br><br>
         </form>
+        <div id="mensagem"></div>
     </main>
     <!---------------- Sessão de Rodapé  ---------------------->
     <footer>

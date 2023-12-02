@@ -6,11 +6,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 const port = 3000;
-
+app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "view")));
 //app.use(express.static(path.join(__dirname + "img")));
-app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "/view/index.html"));
@@ -47,6 +47,29 @@ app.get("/cargainicial", async (req, res) => {
     }
 });
 
+app.post('/voto', (req, res) => {
+    try {
+        const { CPF, numeroCandidato } = req.body;
+
+        // Gerar timestamp no formato desejado (usei milissegundos neste exemplo)
+        const timestampVoto = new Date().toISOString().replace(/[-:.]/g, '');
+
+        // Gravar os dados no arquivo CSV
+        const dado = `${CPF || ''},${numeroCandidato},${timestampVoto}\n`;
+        fs.appendFile('votacao.csv', dado);
+
+        res.status(200).json({
+            Status: '200',
+            mensagem: 'Voto Registrado Com sucesso',
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            Status: '500',
+            mensagem: 'Erro ao registrar voto, contate o administrador do sistema',
+        });
+    }
+});
 
 
 
