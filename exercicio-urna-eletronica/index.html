@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato - Urna Eletrônica</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <form id="urna-form">
+            <fieldset class="borda">
+                <legend class="borda">Urna Eletrônica</legend>
+                <section class="imgCandidatos">
+                    <img id="idFoto" src="./img/presidentDay.jpg" alt="Candidato">
+                    <input id="idNomeCandidato" type="nomeCandidato" name="nmCandidato" value="Futuro Presidente" readonly><br><br>
+                </section>
+                <input id="idNumeroCandidato" type="numeroCandidato" autofocus placeholder="Número de seu candidato"><br><br>
+                <input id="idcpf" type="numeroCandidato" placeholder="Digite seu CPF"><br><br>
+                <!------------ botões ------>
+                <section class="botoesUrnaEletronica">
+                    <input style="background-color: darkgreen" class="urna" type="submit" value="Confirmar">
+                    <input style="background-color:rgb(159, 36, 36)" class="urna" type="button" value="Cancelar">
+                    <input style="background-color:beige" class="urna" type="button" value="Branco">
+                </section>
+                <br>
+            </fieldset>
+            <br><br>
+        </form>
+        <div class="statusVoto"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Estudos Entra21.<br>Autora: Francine dos Santos.</p>
+    </footer>
+</body>
+
+</html>
