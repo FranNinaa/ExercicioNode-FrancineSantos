@@ -1,4 +1,4 @@
-import { buscarUsuarioID, deletarUsuarioId, getUsuarios } from '../database/conexao.js'
+import { buscarUsuarioID, deletarUsuarioId,buscarUsuarioIndexID, getUsuarios } from '../database/conexao.js'
 
 class UsuarioController{
 
@@ -25,13 +25,11 @@ class UsuarioController{
     
     //Atualizar Registro 
     update(req, res){
-        let indexUsuario = buscarUsuarioID(req.params.id);
+        let indexUsuario = buscarUsuarioIndexID(req.params.id);
         let usuarios = getUsuarios();
-        console.log(indexUsuario)
-        console.log(usuarios)
         usuarios[indexUsuario].email = req.body.email;
         usuarios[indexUsuario].senha = req.body.senha;
-        res.status(200).send("Usuário atualizado com sucesso");
+        res.status(200).json(usuarios[indexUsuario])
         
     };
     
@@ -41,7 +39,7 @@ class UsuarioController{
      * Deletar Registro
      */
     delete(req, res){
-        let indexUsuario = deletarUsuarioId(req.params.id);  // Corrigido para req.params.id
+        let indexUsuario = deletarUsuarioId(req.params.id); 
         getUsuarios().splice(indexUsuario, 1)
         res.status(200).send(`Usuario ${req.params.id} excluido com sucesso`);
     };

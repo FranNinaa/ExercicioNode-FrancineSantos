@@ -11,6 +11,11 @@ function buscarUsuarioID(id) {
     return usuarios.find(usuario => usuario.id == id);
 }
 
+//buscar um usuario pelo seu id
+function buscarUsuarioIndexID(id) {
+    return usuarios.findIndex(autor => autor.id == id)
+}
+
 
 //função para buscar o id para esta fazendo a exclusão
 function deletarUsuarioId(id) {
@@ -21,4 +26,4 @@ function getUsuarios() {
     return usuarios;
 }
 
-export { buscarUsuarioID, deletarUsuarioId, getUsuarios }
+export { buscarUsuarioID, deletarUsuarioId,buscarUsuarioIndexID, getUsuarios }
